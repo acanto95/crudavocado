@@ -20,7 +20,6 @@ function consultarLogin($name,$password){
             $q = $pdo->prepare($sql);
             $q->execute(array($name,$password,$image,$star));           
             Database::disconnect();
-            header("Location: index.php");
             return true;
 }
 ?>
