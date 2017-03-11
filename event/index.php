@@ -47,6 +47,9 @@
 	    					  	echo '<td>'. $row['razon'] . '</td>';
 	                            
 	                            echo '<td width=250>';
+
+	                            echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Actualizar</a>';
+	    					   	echo '&nbsp;';
 	                           
 	    		
 	    					   	echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Eliminar</a>';
