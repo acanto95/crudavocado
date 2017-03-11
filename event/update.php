@@ -65,9 +65,9 @@
 		if ($valid) {
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "UPDATE event set id = ?, id_user = ?, name = ?, description = ?,  position =?, date = ?, razon = ? WHERE id = ?";
+			$sql = "UPDATE event set id = ?, id_user = ?, name = ?, description = ?, position =?, date = ?, razon = ? WHERE id = ?";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($f_id,$id_user $name,$description,$position,$date,$razon,$id));
+			$q->execute(array($f_id,$id_user, $name,$description,$position,$date,$razon,$id));
 			Database::disconnect();			
 			header("Location: index.php");
 		}
