@@ -9,7 +9,7 @@
 	<body>
 	    <div class="container">
 	    		<div class="row">
-	    			<h3>Usuarios/h3>
+	    			<h3>Usuarios</h3>
 	    		</div>
 				<div class="row">
 					<p>
@@ -43,8 +43,7 @@
 	    					  	echo '<td>'. $row['star'] .'</td>';
 	                            
 	                            echo '<td width=250>';
-	                           	echo '<a class="btn" href="read.php?id='.$row['id'].'">Detalles</a>';
-	    					   	echo '&nbsp;';
+	                           
 	    					  	echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Actualizar</a>';
 	    					   	echo '&nbsp;';
 	    					   	echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Eliminar</a>';
