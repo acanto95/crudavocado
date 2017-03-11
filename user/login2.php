@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_SERVER['HTTP_ORIGIN'])) {
-        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
         header('Access-Control-Allow-Credentials: true');
         header('Access-Control-Max-Age: 86400');   
     }
@@ -13,14 +13,14 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
             header("Access-Control-Allow-Methods: GET, POST, OPTIONS");         
  
         if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
-            header("Access-Control-Allow-Headers:        *)";
+            header("Access-Control-Allow-Headers:        {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
  
         exit(0);
     }
  
  
     
-    $postdata = file_get_contents("php://input");
+ $postdata = file_get_contents("php://input");
  if (isset($postdata)) {
  $request = json_decode($postdata);
  $name = $request->name;
@@ -28,13 +28,13 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
  
  if ($username != "") {
  echo "Server returns: " . $name;
- echo "and" . $password;
+ echo "and" . $password
  }
  else {
  echo "Empty username parameter!";
  }
  }
  else {
- echo "Not called properly with username parameter!";
+ echo "Not called properly with username parameter!";   
  }
 ?>
