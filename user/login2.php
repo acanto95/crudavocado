@@ -27,8 +27,7 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
  $password = $request->password;
  
  if ($username != "") {
- echo "Server returns: " . $name;
- echo "and" . $password
+ return true;
  }
  else {
  echo "Empty username parameter!";
