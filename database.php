@@ -1,7 +1,7 @@
 <?php
 	class Database {
 		private static $dbName 			= 'avocado' ; 
-		private static $dbHost 			= 'root@avocado-help' ;
+		private static $dbHost 			= 'localhost' ;
 		private static $dbUsername 		= 'admin';
 		private static $dbUserPassword 	= '56add18d8204bdf3e6d9bdb12fa2f9a5f1e3942be3adab53';
 		
