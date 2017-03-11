@@ -6,8 +6,10 @@
 require 'database.php';
 // TOMAMOS NUESTRO JSON RECIBIDO DESDE LA PETICION DE ANGULAR JS Y LO LEEMOS
  
-$name = $_POST['name'];
- $password = $_POST['password'];
+$JSON       = file_get_contents("php://input");
+$request    = json_decode($JSON);
+$name    = $request->name; 
+$password = $request->password;
  
 consultarLogin($name,$password);
  
