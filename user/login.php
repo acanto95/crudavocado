@@ -8,12 +8,12 @@ require 'database.php';
  
 $JSON       = file_get_contents("php://input");
 $request    = json_decode($JSON);
-$user    = $request->user; 
+$name    = $request->name; 
 $password = $request->password;
  
-consultarLogin($user,$password);
+consultarLogin($name,$password);
  
-function consultarLogin($user,$password){
+function consultarLogin($name,$password){
     $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "INSERT INTO user (id,name,password, image,star) values(null, ?, ?, null,null)";           
