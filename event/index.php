@@ -20,31 +20,35 @@
 			            <thead>
 			                <tr>		                 
 			                	<th>id</th>
+			                	<th>creator</th>
 			                	<th>name</th>
-	                        	<th>pass</th>
-	                        	<th>image</th> 
-	                        	<th>rating</th>                           		                  
+	                        	<th>description</th>
+	                        	<th>position</th> 
+	                        	<th>date</th>
+	                        	<th>Razon social</th>                            		                  
 			                </tr>
 			            </thead>
 			            <tbody>
 			              	<?php 
 						   	include 'database.php';
 						   	$pdo = Database::connect();
-						   	$sql = 'SELECT * FROM user';
+						   	$sql = 'SELECT * FROM event';
 		 				   	foreach ($pdo->query($sql) as $row) {
 								echo '<tr>';							   	
 	    					   	echo '<td>
 
 
 	    					   	'. $row['id'] . '</td>';
+	    					   	echo '<td>'. $row['id_user'] . '</td>';
 	    					  	echo '<td>'. $row['name'] . '</td>';
-	    					  	echo '<td>'. $row['password'] .'</td>';
-	    					  	echo '<td>'. $row['image'] .'</td>';
-	    					  	echo '<td>'. $row['star'] .'</td>';
+	    					  	echo '<td>'. $row['description'] .'</td>';
+	    					  	echo '<td>'. $row['position'] .'</td>';
+	    					  	echo '<td>'. $row['date'] .'</td>';
+	    					  	echo '<td>'. $row['razon'] . '</td>';
 	                            
 	                            echo '<td width=250>';
 	                           
-	    					  
+	    		
 	    					   	echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Eliminar</a>';
 	    					   	echo '</td>';
 							  	echo '</tr>';
